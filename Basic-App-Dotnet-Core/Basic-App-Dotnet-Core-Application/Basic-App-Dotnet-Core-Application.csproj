@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Basic_App_Dotnet_Core_Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Basic-App-Dotnet-Core-Data\Basic-App-Dotnet-Core-Data.csproj" />
+    <ProjectReference Include="..\Basic-App-Dotnet-Core-Entity\Basic-App-Dotnet-Core-Entity.csproj" />
+  </ItemGroup>
+
+</Project>
