@@ -37,6 +37,17 @@ namespace Basic_App_Dotnet_Core_Web
 
             services.RegisterServices();
 
+            services.AddCors(option =>
+            {
+                option.AddPolicy("CORS", builder =>
+                 {
+                     builder.AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .WithOrigins("http://localhost:4200")
+                            .AllowCredentials();
+                 });
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -55,6 +66,8 @@ namespace Basic_App_Dotnet_Core_Web
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("CORS");
 
             app.UseRouting();
 
