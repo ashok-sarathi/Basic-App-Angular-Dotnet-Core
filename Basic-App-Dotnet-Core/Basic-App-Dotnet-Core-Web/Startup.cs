@@ -1,3 +1,4 @@
+using Basic_App_Dotnet_Core_Application.Base;
 using Basic_App_Dotnet_Core_Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +34,8 @@ namespace Basic_App_Dotnet_Core_Web
             {
                 option.UseSqlServer(Configuration.GetConnectionString("SqlServer"));
             });
+
+            services.RegisterServices();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

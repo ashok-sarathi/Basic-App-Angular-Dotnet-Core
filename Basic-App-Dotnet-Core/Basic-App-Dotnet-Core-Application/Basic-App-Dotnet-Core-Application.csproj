@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Basic-App-Dotnet-Core-Entity\Basic-App-Dotnet-Core-Entity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Master\" />
+  </ItemGroup>
+
 </Project>
