@@ -8,14 +8,9 @@ import { UserServiceService } from 'src/app/app-common/identity/user-service.ser
 })
 export class CustomerDashboardComponent implements OnInit {
 
-  constructor(private userService: UserServiceService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(data => {
-      debugger;
-    }, error => {
-      debugger;
-    });
   }
 
 }

@@ -1,0 +1,47 @@
+<h5>Users</h5>
+
+<div class="mb-3">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input id="firstName" class="form-control" type="text" name="" [(ngModel)]="user.firstName">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input id="lastName" class="form-control" type="text" name="" [(ngModel)]="user.lastName">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input id="email" class="form-control" type="email" name="" [(ngModel)]="user.email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input id="password" class="form-control" type="password" name="" [(ngModel)]="user.password">
+  </div>
+  <div class="mt-3">
+    <button *ngIf="user.id == null" class="btn btn-primary" type="button" (click)="create()">Create</button>
+    <button *ngIf="user.id != null" class="btn btn-success" type="button" (click)="update()">Update</button>
+    <button class="btn btn-warning mx-2" type="button" (click)="user = {}">Clear</button>
+  </div>
+</div>
+
+<table class="table table-light">
+  <tbody>
+    <tr>
+      <th>S.no</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let item of users;let i = index">
+      <td>{{i+1}}</td>
+      <td>{{item.firstName}}</td>
+      <td>{{item.lastName}}</td>
+      <td>{{item.email}}</td>
+      <td>
+        <button class="btn btn-secondary" type="button" (click)="getUser(item.id)">Edit</button>
+        <button class="btn btn-info mx-2" type="button" (click)="delete(item.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
